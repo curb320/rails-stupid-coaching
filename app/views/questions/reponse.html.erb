@@ -1,0 +1,38 @@
+<div class="container align-middle" style="width:800px">
+<div class="titre"><h1>Stupid coaching</h1></div>
+
+</br>
+</br>
+<div class="ask pe-3" >
+<%= params[:nom] %>
+</br>
+- You
+</div>
+</br>
+</br>
+
+<%
+  @txt = params[:nom]
+  if (@txt == "I am going to work")
+   @answer = "Great!"
+  elsif (@txt[-1] == "?")
+   @answer = "Silly question, get dressed and go to work!."
+  elsif (@txt == 'connard')
+   @answer = "je t'emmerde petit con"
+  else
+   @answer = "I don't care, get dressed and go to work!."
+  end %>
+
+<div class=" me3">
+<div class="answer ps-3">
+<%=@answer%>
+</br>
+- Coach
+</div>
+
+<%= link_to "ask a new question", ask_path %>
+
+</div>
+
+
+<%# ER et PE %>
